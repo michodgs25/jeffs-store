@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--font-awesome library, provide site icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" type="text/css" />
+    <!-- materilize minified CSS library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <!--custom css file-->
+    <link rel="stylesheet" href="static/css/base.css" type="text/css/base.css">
+    <!--site name, introduces platform to user-->
+    <title>Products</title>
+    <link id="favicon" rel="icon" type="image/png" sizes="32x32"
+        href="{{url_for('static', filename='images/favicon/favicon-32x32.png') }}">
+</head>
+
+<br>
+<h2>Edit Product</h2>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_product', product_id=product._id) }}">
+        <!--edit product name-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="product_name" name="product_name" class="validate" minlength="5" maxlength="50"
+                    required>{{ product.product_name }}</textarea>
+                <label for="product_name">Product name</label>
+            </div>
+        </div>
+        <!--edit product name-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="product_price" name="product_price" class="validate" minlength="5" maxlength="8"
+                    required>{{ product.product_name }}</textarea>
+                <label for="product_price">Product price</label>
+            </div>
+        </div>
+        <br>
+        <!--edit product currency-->
+        <div class="input-field col s12">
+            <select id="product_currency" name="product_currency" required>
+                <option value="" disabled>Please select:</option>
+                <option value="{{ product.product_currency }}">GBP</option>
+                <option value="{{ product.product_currency }}">USD</option>
+                <option value="{{ product.product_currency }}">CHF</option>
+                <option value="{{ product.product_currency }}" selected>KYD</option>
+                <option value="{{ product.product_currency }}">EUR</option>
+            </select>
+            <label for="product_currency">Select currency</label>
+        </div>
+        <br>
+        <!--save activity button-->
+        <br>
+        <div class="edit-buttons">
+            <button type="submit" class="btn-large green darken-1 text-shadow">
+                Save Changes <i class="fas fa-edit right "></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!--Scripts secion-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<!-- Compiled materialize Js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--custom js-->
+<script src="static/js/base.js" type="js/base.js"></script>
+</body>
+
+</html>
