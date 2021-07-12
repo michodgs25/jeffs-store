@@ -41,18 +41,15 @@
             </div>
         </div>
         <br>
-        <!--edit product currency-->
-        <div class="input-field col s12">
-            <select id="product_currency" name="product_currency" required>
-                <option value="" disabled>Please select:</option>
-                <option value="{{ product.product_currency }}">GBP</option>
-                <option value="{{ product.product_currency }}">USD</option>
-                <option value="{{ product.product_currency }}">CHF</option>
-                <option value="{{ product.product_currency }}" selected>KYD</option>
-                <option value="{{ product.product_currency }}">EUR</option>
-            </select>
-            <label for="product_currency">Select currency</label>
+        <!--Edit product currency-->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="product_currency" name="product_currency" type="text" class="validate" minlength="1"
+                    maxlength="8" required> {{ product.product_currency }}
+                <label for="product_currency">Currency</label>
+            </div>
         </div>
+        <br></br>
         <br>
         <!--save activity button-->
         <br>
