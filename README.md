@@ -141,7 +141,7 @@ You will need the following tools installed on your system:
 
 Python 3 - https://www.python.org/downloads/
 An IDE such as Visual Studio, gitpod, Code, or like this project gitpod
-An account at MongoDB Atlas - https:https://github.com/michodgs25/Sprint//www.mongodb.com/
+An account at MongoDB Atlas - https://account.mongodb.com/account/login
 Git - https://gist.github.com/derhuerst/1b15ff4652a867391f03
 
 
