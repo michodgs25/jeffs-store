@@ -44,8 +44,8 @@
         <!--Edit product currency-->
         <div class="row">
             <div class="input-field col s12">
-                <input id="product_currency" name="product_currency" type="text" class="validate" minlength="1"
-                    maxlength="8" required> {{ product.product_currency }}
+                <textarea id="product_currency" name="product_currency" type="text" class="validate" minlength="1"
+                    maxlength="8" required> {{ product.product_currency }} </textarea>
                 <label for="product_currency">Currency</label>
             </div>
         </div>
@@ -58,6 +58,14 @@
                 Save Changes <i class="fas fa-edit right "></i>
             </button>
         </div>
+        <div class="row"></div>
+        <div class="col s12 center-align"></div>
+        <!--cancel changes made button-->
+        <a href="{{ url_for('products') }}" class="btn-large red text-shadow">
+        Cancel Changes <i class="fas fa-times-circle right"></i>
+        </a>
+        <br>
+    </div>
     </form>
 </div>
 
@@ -66,8 +74,6 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <!-- Compiled materialize Js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!--custom js-->
-<script src="static/js/base.js" type="js/base.js"></script>
 </body>
 
 </html>

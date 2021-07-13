@@ -1,0 +1,13 @@
+/*Page title position*/
+h2 {
+    text-align: center;
+}
+
+/*add product button*/
+.add-btn {
+    margin: 1em;
+}
+
+.product-table {
+    text-align: center;
+}

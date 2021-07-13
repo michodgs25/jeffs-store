@@ -22,11 +22,11 @@ def get_index():
 
 @app.route("/products")
 def products():
-    products = list(mongo.db.products.find())
-    return render_template("index.html", products=products)
+    product = list(mongo.db.products.find())
+    return render_template("index.html", product=product)
 
 
-@app.route("/product/add", methods=["GET", "POST"])
+@app.route("/products/add", methods=["GET", "POST"])
 def add_product():
     if request.method == "POST":
         product = {
@@ -38,14 +38,13 @@ def add_product():
         mongo.db.products.insert_one(product)
         return redirect(url_for("products"))
     product = mongo.db.products.find().sort("product_name", 1)
-    return render_template("add_product.html", products=products)
+    return render_template("add_product.html", product=product)
 
 
-@app.route("/product/edit/<product_id>", methods=["POST", "GET"])
+@app.route("/products/edit/<product_id>", methods=["POST", "GET"])
 def edit_product(product_id):
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     if not product:
-
         return render_template("error.html")
     if request.method == "POST":
         submit = {
@@ -56,10 +55,11 @@ def edit_product(product_id):
         }
         mongo.db.products.update({"_id": ObjectId(product_id)}, submit)
         return redirect(url_for("products"))
-
+        """Find product in collection and update it
+        """
         mongo.db.products.update_one({"_id": ObjectId(product_id)}, submit)
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
-    return render_template("edit_product.html", products=products)
+    return render_template("edit_product.html", product=product)
 
 
 @app.route("/product/delete/<product_id>")
