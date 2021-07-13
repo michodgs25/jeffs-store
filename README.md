@@ -157,13 +157,14 @@ I personally used github on my local machine to develop the site using Python 3.
 
 5. Create a MONGODB account, Create a cluster and follow the mongodb steps to connecting with your application.
 
-6. I created an env.py file(make sure its added to gitignore) add the following:
+6. I created an env.py file(make sure its added to '.gitignore' file. As to ensure no secret keys are exposed) and add the following:
   - **IP**: `0.0.0.0`
   - **PORT**: `8000`
   - **MONGO_URI**: `string to connect with MongoDB`
   - **SECRET_KEY**: `your chosen secret key`
 
 7. Add these to the top of your app.py file:
+```
 import os
 from flask import (
     Flask, render_template, redirect, request, session, url_for)
@@ -171,6 +172,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
+ ```
 
 8. Run the app.py file as appropriate to your chosen environment and os.
 
