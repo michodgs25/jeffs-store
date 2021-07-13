@@ -34,5 +34,5 @@ th, td {
 
 /*add& edit save or cancel changes buttons*/
 .edit-buttons {
-    align-content: right;
+    text-align: right;
 }
