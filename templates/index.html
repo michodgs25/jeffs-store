@@ -2,12 +2,13 @@
 {% block content %}
 
 <body>
-    <!--Products display table, user can view, edit and delete items-->
+    <!--Products display table, user can view, edit and delete products-->
     <h2>Product Table</h2>
     <div class="add-btn">
-        <a href="{{ url_for('add_product') }}" class="waves-effect waves-light btn">Add Product<i class="fas fa-plus-circle right"></i></a>
+        <a href="{{ url_for('add_product') }}" class="waves-effect waves-light btn">Add Product<i
+                class="fas fa-plus-circle right"></i></a>
     </div>
- <table class="product-table">
+    <table class="product-table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -18,6 +19,7 @@
         </thead>
 
         <tbody>
+            <!--Loop through product in the collection-->
             {% for product in product %}
             <tr>
                 <td>{{ product.product_id }}</td>

@@ -1,47 +1,54 @@
 {% extends "base.html" %} {% block content %}
 
 <body>
-	<!--Add new product-->
-	<h2>Add new product</h2>
-	<div class="row card-panel light-grey darken-4">
-		<form class="col s12" method="POST" action="{{ url_for('add_product') }}">
-			<!--provide product ID input-->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="product_id" name="product_id" type="number" class="validate" minlength="1" maxlength="4" required>
-					<label for="product_id">Product id</label>
-				</div>
-				<!--provide product name input-->
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="product_name" name="product_name" type="text" class="validate" minlength="3" maxlength="25" required>
-						<label for="product_name">Product name</label>
-					</div>
-				</div>
-				<!--provide product price input-->
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="product_price" name="product_price" type="number" class="validate" minlength="1" maxlength="8" required>
-						<label for="product_price">Price</label>
-					</div>
-					<!--Choose product currency-->
-					<div class="row">
-						<div class="input-field col s12">
-							<input id="product_currency" name="product_currency" type="text" class="validate" minlength="1" maxlength="8" required>
-							<label for="product_currency">Currency</label>
-						</div>
-					</div>
-					<br></br>
-					<!--save button, save product to database-->
-					<br>
-					<!--save activity button-->
-					<br>
-					<div class="edit-buttons">
-						<button type="submit" class="btn-large green darken-1 text-shadow"> Save <i class="fas fa-edit right "></i> </button>
-						<!--cancel changes made button--><a href="{{ url_for('products') }}" class="btn-large red text-shadow">
+    <!--Add new product-->
+    <h2>Add new product</h2>
+    <div class="row card-panel light-grey darken-4">
+        <form class="col s12" method="POST" action="{{ url_for('add_product') }}">
+            <!--provide product ID input-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="product_id" name="product_id" type="number" class="validate" minlength="1" maxlength="4"
+                        required>
+                    <label for="product_id">Product id</label>
+                </div>
+                <!--provide product name input-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="product_name" name="product_name" type="text" class="validate" minlength="3"
+                            maxlength="25" required>
+                        <label for="product_name">Product name</label>
+                    </div>
+                </div>
+                <!--provide product price input-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="product_price" name="product_price" type="number" class="validate" minlength="1"
+                            maxlength="8" required>
+                        <label for="product_price">Price</label>
+                    </div>
+                    <!--Choose product currency-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="product_currency" name="product_currency" type="text" class="validate"
+                                minlength="1" maxlength="8" required>
+                            <label for="product_currency">Currency</label>
+                        </div>
+                    </div>
+                    <br></br>
+                    <!--save button, save product to database-->
+                    <br>
+                    <!--save activity button-->
+                    <br>
+                    <div class="edit-buttons">
+                        <button type="submit" class="btn-large green darken-1 text-shadow"> Save <i
+                                class="fas fa-edit right "></i> </button>
+                        <!--cancel changes made button--><a href="{{ url_for('products') }}"
+                            class="btn-large red text-shadow">
                             Cancel <i class="fas fa-times-circle right"></i>
-                        </a> </div>
-				</div>
-			</div>
-		</form>
-	</div> {% endblock %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div> {% endblock %}
